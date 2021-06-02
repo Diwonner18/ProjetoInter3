@@ -1,0 +1,128 @@
+/*utilitarios e elementos compartilhados*/
+#log-medico, #logon-item {
+    display: none;
+}
+
+.espaco {
+    margin-top: 5%;
+}
+
+.b-dark {
+    background-color: #001c68;
+}
+
+.b-mid {
+    background-color: #3657b3;
+}
+
+.b-light {
+    background-color: #4c76eb;
+}
+
+#logoff-item i {
+    color: #4c76eb;
+}
+/*configurações de menu*/
+nav {
+    width: 96% !important;
+}
+
+#logo {
+    width: 30%;
+}
+
+.user-pic {
+    width: 30%;
+    max-width: 50px;
+    height: auto;
+}
+
+.btn-menu, .btn-menu::after, .btn-menu * {
+    border: 0 !important;
+}
+
+.fa-sort-down, #username {
+    margin-left: 2%;
+}
+/*Configurações de modal*/
+.text-on, .text-on a {
+    background-color: #3657b3;
+    color: #fff;
+}
+
+.text-off, .text-off a {
+    background-color: #fff;
+    color: #001c68;
+}
+
+.col-6 a {
+    text-decoration: none;
+}
+
+.modal-logo {
+    width: 30%;
+}
+
+.modal-header {
+    padding: 0 !important;
+    border-bottom: 1.5px solid #3657b3;
+}
+
+    .modal-header .col-6 {
+        padding: 1%;
+    }
+
+.modal-content {
+    border: none !important;
+}
+
+.modal-footer {
+    border: none !important;
+}
+/*corpo da pagina home*/
+#box-home {
+    background-image: url("../imagens/banner.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* serrch bar da home*/
+custom-search-input {
+    margin: 0;
+    padding: 0;
+    min-width: 415px;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    margin-left: -34px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #706a6a;
+    z-index: 1000;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}

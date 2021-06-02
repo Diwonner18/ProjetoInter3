@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoInter03</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="icon" href="~/images/logo.png" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <header>
+        <nav class="container-fluid navbar navbar-dark navbar-expand-lg" id="menu">
+            <a href="/home" id="logo" class="navbar-brand" data-toggle="tooltip" title="pagina principal"><img src="~/images/logo.png" alt="logo" id="logo" /></a>
+            <ul class="navbar-nav ml-auto">
+                <li id="logoff-item" class="dropdown nav-link">
+                    <a class="dropdown-toggle btn-menu" href="#" id="user-off" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa fa-user-circle fa-3x"></i>
+                    </a>
+                    <div id="user-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="user-off">
+                        <a class="dropdown-item text-center" href="" data-toggle="modal" data-target="#modal-login">Fazer login</a>
+                        <a class="dropdown-item text-center" href="#">Registre-se</a>
+                    </div>
+                </li>
+                <li id="logon-item" class="dropdown nav-link ml-auto">
+                    <button class="dropdown-toggle btn btn-menu b-light d-flex justify-content-between align-items-center" href="#" id="user-on" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="~/images/users/user01.png" class="user-pic" alt="Foto de perfil" /><span id="username"></span><i class="fas fa-sort-down"></i>
+                    </button>
+                    <div id="user-menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="user-on">
+                        <a class="dropdown-item" href="#">Sair</a>
+                        <a class="dropdown-item" href="#">Sair</a> <!--Essas opções precisam mudar de acordo com o tipo de usuario-->
+                        <a class="dropdown-item" href="#">Sair</a>
+                        <a class="dropdown-item" href="#">Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Modal login -->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-6 text-on text-center btn-paciente"><a href="#">Paciente</a></div>
+                    <div class="col-6 text-off text-center btn-medico"><a href="#">Médico</a></div>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <img src="~/images/logo.png" class="modal-logo espaco img-fluid" alt="Logo La Voyage" />
+                </div>
+                <form id="log-paciente" method="post" action="#">
+                    <div class="modal-body">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="p-email" class="form-control" name="p-email">
+
+                        <label for="senha">Senha</label>
+                        <input type="password" id="p-senha" class="form-control" name="p-senha">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn b-mid btn-login btn-primary form-control">Entrar</button>
+                    </div>
+                </form>
+                <form id="log-medico" method="post" action="#">
+                    <div class="modal-body">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="m-email" class="form-control" name="m-email">
+
+                        <label for="senha">Senha</label>
+                        <input type="password" id="m-senha" class="form-control" name="m-senha">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn b-mid btn-login btn-primary form-control">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal Login-->
+    @RenderBody()
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - ProjetoInter03 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
